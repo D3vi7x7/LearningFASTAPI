@@ -13,3 +13,4 @@ Traceback (most recent call last):
 sqlite3.OperationalError: no such column: d.departmet
 2026-07-01 20:08:22 | models.appointment | INFO | Fetched 4 appointments
 2026-07-01 20:09:08 | models.appointment | INFO | Fetched 4 appointments
+2026-07-02 20:06:32 | models.appointment | INFO | Fetched 4 appointments

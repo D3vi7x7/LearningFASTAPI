@@ -3,12 +3,13 @@ import sqlite3
 from fastapi import APIRouter, Depends
 
 from db import getConnection
+from dependencies import require_admin
 from models.appointment import Appointment, AppointmentService, AppointmentUpdate
 
 router = APIRouter()
 
 
-@router.post("")
+@router.post("", dependencies=[Depends(require_admin)])
 async def create_appointment(
     appointment: Appointment, db: sqlite3.Connection = Depends(getConnection)
 ):
@@ -24,6 +25,7 @@ async def get_patient_appointments(
     department: str = None,
     from_date: str = None,
     to_date: str = None,
+    user: dict = Depends(require_admin),
     db: sqlite3.Connection = Depends(getConnection),
 ):
     resp = await AppointmentService.get_patient_appointments(
@@ -32,7 +34,7 @@ async def get_patient_appointments(
     return resp
 
 
-@router.patch("/{appointment_id}")
+@router.patch("/{appointment_id}", dependencies=[Depends(require_admin)])
 async def update_appointment(
     appointment_id: int,
     appointment_data: AppointmentUpdate,
