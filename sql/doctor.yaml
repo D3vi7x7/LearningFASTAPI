@@ -1,0 +1,14 @@
+create_doctor: INSERT INTO doctors
+  (
+  name,
+  specialization,
+  license_no,
+  department,
+  contact,
+  available
+  )
+  VALUES (?, ?, ?, ?, ?, ?)
+
+get_doctor_by_id: SELECT *
+  FROM doctors
+  WHERE doctor_id = ?

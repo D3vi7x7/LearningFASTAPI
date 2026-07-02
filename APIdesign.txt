@@ -1,0 +1,44 @@
+for all patient fetch :
+GET /api/v1/patients
+
+for patient creation:
+POST /api/v1/patients
+
+for all Doctor fetch:
+GET /api/v1/doctors
+
+for Doctor creation:
+POST /api/v1/doctors
+
+for all Appointment fetch:
+GET /api/v1/appointments
+
+for Appointment creation:
+POST /api/v1/appointments
+
+for given patient, fetching every visit:
+GET /api/v1/patients/{patientId}/appointments
+
+for given doctor, fetching every appointment:
+GET /api/v1/doctors/{doctorId}/appointments
+
+for fetching visits by date range:
+GET /api/v1/appointments?start={startDate}&end={endDate}
+
+for fetching a patient's appointment by date range:
+GET /api/v1/patients/{patientId}/appointments?start={startDate}&end={endDate}
+
+for fetching only completed appointments:
+GET /api/v1/appointments?status=completed
+
+for fetching appointments of a patient by doctor:
+GET /api/v1/patients/{patientId}/appointments?doctorId={doctorId}
+
+for fetching appointments of a patient by department:
+GET /api/v1/patients/{patientId}/appointments?department={departmentName}
+
+for updating an appointment:
+PUT /api/v1/appointments/{appointmentId}
+
+for deleting an appointment:
+DELETE /api/v1/appointments/{appointmentId}

@@ -1,0 +1,17 @@
+create_patient: INSERT INTO patients
+  (
+  mrn,
+  name,
+  age,
+  ward,
+  blood_group,
+  contact
+  )
+  VALUES (?, ?, ?, ?, ?, ?)
+
+get_patient_by_id: SELECT *
+  FROM patients
+  WHERE patient_id = ?
+
+delete_patient: DELETE FROM patients
+  WHERE patient_id = ?

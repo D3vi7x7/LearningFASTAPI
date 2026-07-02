@@ -1,0 +1,12 @@
+create_user: INSERT INTO users
+  (
+  username,
+  password,
+  role,
+  doctor_id
+  )
+  VALUES (?, ?, ?, ?)
+
+get_user_by_username: SELECT *
+  FROM users
+  WHERE username = ?

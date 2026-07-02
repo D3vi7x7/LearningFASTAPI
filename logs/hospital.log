@@ -1,0 +1,15 @@
+2026-07-01 15:34:58 | models.appointment | INFO | Appointment created for patient 14 !!
+2026-07-01 19:56:53 | models.appointment | ERROR | near "a": syntax error
+Traceback (most recent call last):
+  File "C:\Users\prasa\Documents\AppointmentApi\models\appointment.py", line 90, in get_patient_appointments
+    res = db.execute(query, params).fetchall()
+          ~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: near "a": syntax error
+2026-07-01 20:07:38 | models.appointment | ERROR | no such column: d.departmet
+Traceback (most recent call last):
+  File "C:\Users\prasa\Documents\AppointmentApi\models\appointment.py", line 90, in get_patient_appointments
+    res = db.execute(query, params).fetchall()
+          ~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: d.departmet
+2026-07-01 20:08:22 | models.appointment | INFO | Fetched 4 appointments
+2026-07-01 20:09:08 | models.appointment | INFO | Fetched 4 appointments
